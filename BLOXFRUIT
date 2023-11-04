@@ -5870,28 +5870,28 @@ end)
                NameMon = "Candy Pirate"  
                PUK = CFrame.new(4-1218.0184326171875, 174.3348846435547, -14536.8603515625)
               CFrameQuest = CFrame.new(-1147.722900390625, 16.142282485961914, -14445.0546875)
-           elseif MyLevel >= 2425 or MyLevel <= 2449  then
+           elseif MyLevel == 2425 or MyLevel <= 2449  then
                Mon = "Snow Demon [Lv. 2425]"
                LevelQuest = 2
                NameQuest = "CandyQuest1"
                NameMon = "Snow Demon"  
                PUK = CFrame.new(-989.9094848632812, 142.46929931640625, -14594.7490234375)
               CFrameQuest = CFrame.new(-1147.722900390625, 16.142282485961914, -14445.0546875)
-           elseif MyLevel >= 2450 or MyLevel <= 2474 then
+           elseif MyLevel == 2450 or MyLevel <= 2474 then
                Mon = "Isle Outlaw [Lv. 2450]"
                LevelQuest = 1
                NameQuest = "TikiQuest1"
                NameMon = "Isle Outlaw"  
                PUK = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
               CFrameQuest = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
-elseif MyLevel >= 2475 or MyLevel <= 2499 then
+elseif MyLevel == 2475 or MyLevel <= 2499 then
                Mon = "Island Boy [Lv. 2475]"
                LevelQuest = 2
                NameQuest = "TikiQuest1"
                NameMon = "Island Boy"  
                PUK = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
               CFrameQuest = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
-elseif MyLevel >= 2500 or MyLevel <= 2524 then
+elseif MyLevel == 2500 or MyLevel <= 2524 then
                Mon = "Sun-kissed Warrior [Lv. 2500]"
                LevelQuest = 1
                NameQuest = "TikiQuest2"
