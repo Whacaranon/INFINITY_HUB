@@ -3754,9 +3754,9 @@ function AttackFunction()
 	end
 end
 
-task.spawn(function()
+tasspawn(function()
     pcall(function()
-    while task.wait(0.01) do
+    while task.wait(0.04) do
         if _G.FastAttack then
             if syn or not syn then
             AttackFunction()
