@@ -3754,7 +3754,7 @@ function AttackFunction()
 	end
 end
 
-sspawn(function()
+spawn(function()
     pcall(function()
     while task.wait(0.04) do
         if _G.FastAttack then
