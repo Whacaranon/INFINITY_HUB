@@ -5878,33 +5878,33 @@ end)
                PUK = CFrame.new(-989.9094848632812, 142.46929931640625, -14594.7490234375)
               CFrameQuest = CFrame.new(-1147.722900390625, 16.142282485961914, -14445.0546875)
            elseif MyLevel >= 2450 or MyLevel <= 2474 then
-               Mon = "Snow Demon [Lv. 2425]"
+               Mon = "Isle Outlaw [Lv. 2450]"
                LevelQuest = 1
                NameQuest = "TikiQuest1"
                NameMon = "Isle Outlaw"  
-               PUK = CFrame.new(-16288, 138, -156)
-              CFrameQuest = CFrame.new(-16547, 56, -172)
+               PUK = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
+              CFrameQuest = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
 elseif MyLevel >= 2475 or MyLevel <= 2499 then
-               Mon = "Snow Demon [Lv. 2425]"
+               Mon = "Island Boy [Lv. 2475]"
                LevelQuest = 2
                NameQuest = "TikiQuest1"
                NameMon = "Island Boy"  
-               PUK = CFrame.new(-16827, 103, -174)
-              CFrameQuest = CFrame.new(-16547, 56, -172)
+               PUK = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
+              CFrameQuest = CFrame.new(-16548.8164, 55.6059914, -172.8125, 0.213092566, -0, -0.977032006, 0, 1, -0, 0.977032006, 0, 0.213092566)
 elseif MyLevel >= 2500 or MyLevel <= 2524 then
-               Mon = "Snow Demon [Lv. 2425]"
+               Mon = "Sun-kissed Warrior [Lv. 2500]"
                LevelQuest = 1
                NameQuest = "TikiQuest2"
                NameMon = "Sun-kissed Warrior"  
-               PUK = CFrame.new(-16270, 97, 1047)
-              CFrameQuest = CFrame.new(-16537, 56, 1052)
+               PUK = CFrame.new(-16541.0215, 54.770813, 1051.46118, 0.0410757065, -0, -0.999156058, 0, 1, -0, 0.999156058, 0, 0.0410757065)
+              CFrameQuest = CFrame.new(-16541.0215, 54.770813, 1051.46118, 0.0410757065, -0, -0.999156058, 0, 1, -0, 0.999156058, 0, 0.0410757065)
 elseif MyLevel >= 2525 then
-               Mon = "Snow Demon [Lv. 2425]"
+               Mon = "Isle Champion [Lv. 2525]"
                LevelQuest = 1
                NameQuest = "TikiQuest2"
                NameMon = "Isle Champion"  
-               PUK = CFrame.new(-16769, 83, 1025)
-              CFrameQuest = CFrame.new(-16537, 56, 1052)
+               PUK = CFrame.new(-16541.0215, 54.770813, 1051.46118, 0.0410757065, -0, -0.999156058, 0, 1, -0, 0.999156058, 0, 0.0410757065)
+              CFrameQuest = CFrame.new(-16541.0215, 54.770813, 1051.46118, 0.0410757065, -0, -0.999156058, 0, 1, -0, 0.999156058, 0, 0.0410757065)
        
 
           end
