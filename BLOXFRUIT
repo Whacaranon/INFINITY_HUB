@@ -5515,49 +5515,49 @@ end)
                 PUK = CFrame.new(-5695.2451171875, 124.95378875732422, -775.65478515625)
                 CFrameQuest = CFrame.new(-5497.06152, 47.5923004, -795.237061, -0.29242146, 0, -0.95628953, 0, 1, 0, 0.95628953, 0, -0.29242146)
             elseif MyLevel == 1000 or MyLevel <= 1049 then
-                Mon = "Snow Trooper [Lv. 1000]"
+                Mon = "Snow Trooper"
                 LevelQuest = 1
                 NameQuest = "SnowMountainQuest"
                 NameMon = "Snow Trooper"
                 PUK = CFrame.new(535.893433, 401.457062, -5329.6958, -0.999524176, 0, 0.0308452044, 0, 1, -0, -0.0308452044, 0, -0.999524176)
                 CFrameQuest = CFrame.new(609.858826, 400.119904, -5372.25928, -0.374604106, 0, 0.92718488, 0, 1, 0, -0.92718488, 0, -0.374604106)
             elseif MyLevel == 1050 or MyLevel <= 1099 then
-                Mon = "Winter Warrior [Lv. 1050]"
+                Mon = "Winter Warrior"
                 LevelQuest = 2
                 NameQuest = "SnowMountainQuest"
                 NameMon = "Winter Warrior"
                 PUK = CFrame.new(1223.7417, 454.575226, -5170.02148, 0.473996818, 2.56845354e-08, 0.880526543, -5.62456428e-08, 1, 1.10811016e-09, -0.880526543, -5.00510211e-08, 0.473996818)
                 CFrameQuest = CFrame.new(609.858826, 400.119904, -5372.25928, -0.374604106, 0, 0.92718488, 0, 1, 0, -0.92718488, 0, -0.374604106)
             elseif MyLevel == 1100 or MyLevel <= 1124 then
-                Mon = "Lab Subordinate [Lv. 1100]"
+                Mon = "Lab Subordinate"
                 LevelQuest = 1
                 NameQuest = "IceSideQuest"
                 NameMon = "Lab Subordinate"
                 PUK = CFrame.new(-6060.10693, 15.9868021, -4904.7876, -0.411000341, -5.06538868e-07, 0.91163528, 1.26306062e-07, 1, 6.12581289e-07, -0.91163528, 3.66916197e-07, -0.411000341)
                 CFrameQuest = CFrame.new(-6064.06885, 15.2422857, -4902.97852, 0.453972578, -0, -0.891015649, 0, 1, -0, 0.891015649, 0, 0.453972578)
             elseif MyLevel == 1125 or MyLevel <= 1174 then
-                Mon = "Horned Warrior [Lv. 1125]"
+                Mon = "Horned Warrior"
                 LevelQuest = 2
                 NameQuest = "IceSideQuest"
                 NameMon = "Horned Warrior"
                 PUK = CFrame.new(-6400.85889, 24.7645149, -5818.63574)
                 CFrameQuest = CFrame.new(-6064.06885, 15.2422857, -4902.97852, 0.453972578, -0, -0.891015649, 0, 1, -0, 0.891015649, 0, 0.453972578)
             elseif MyLevel == 1175 or MyLevel <= 1199 then
-                Mon = "Magma Ninja [Lv. 1175]"
+                Mon = "Magma Ninja"
                 LevelQuest = 1
                 NameQuest = "FireSideQuest"
                 NameMon = "Magma Ninja"
                 PUK = CFrame.new(-5496.65576, 58.6890411, -5929.76855)
                 CFrameQuest = CFrame.new(-5428.03174, 15.0622921, -5299.43457, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)
             elseif MyLevel == 1200 or MyLevel <= 1249 then
-                Mon = "Lava Pirate [Lv. 1200]"
+                Mon = "Lava Pirate"
                 LevelQuest = 2
                 NameQuest = "FireSideQuest"
                 NameMon = "Lava Pirate"
                 PUK = CFrame.new(-5169.71729, 34.1234779, -4669.73633)
                 CFrameQuest = CFrame.new(-5428.03174, 15.0622921, -5299.43457, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213)
             elseif MyLevel == 1250 or MyLevel <= 1274 then
-                Mon = "Ship Deckhand [Lv. 1250]"
+                Mon = "Ship Deckhand"
                 LevelQuest = 1
                 NameQuest = "ShipQuest1"
                 NameMon = "Ship Deckhand"
