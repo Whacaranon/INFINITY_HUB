@@ -6394,14 +6394,13 @@ spawn(function()
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
           if (v.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 900 then
           
-				
+					
 								repeat wait()
  game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
 								print(v)
 									AutoHaki()
 									EquipWeapon(_G.SelectWeapon)
-									topos(v.Head.CFrame * CFrame.new(0,57,0))
-                                    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
+									topos(v.Head.CFrame * CFrame.new(0,50,0))
 									AutoClick = true
 								until not  _G.Auto_Sea_Event or not v.Parent or v.Humanoid.Health <= 0 
 						
@@ -6438,25 +6437,22 @@ until game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Wa
   
 end
 if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
-  
+      
          repeat wait()
 ew(CFrame.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931))
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
                   game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-       end
-
-    until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
-    if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
-    repeat wait()
-    ew(game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame)
+end
+until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
+       repeat wait()
+ew(game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"A",false,game)
-      
+         until not
+game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
 
-         until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
         
-        
-     
+   
          
          end
          end
