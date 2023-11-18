@@ -6438,21 +6438,19 @@ until game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Wa
   
 end
 if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
-    for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+  
          repeat wait()
 ew(CFrame.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931))
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
                   game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end
-until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
-       repeat wait()
 ew(game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"A",false,game)
          until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
 
         
-        end
+     
          
          end
          end
