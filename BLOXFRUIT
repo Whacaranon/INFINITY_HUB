@@ -6419,10 +6419,10 @@ Main:AddToggleLeft("Auto Dirvve Bost",_G.Auto_Walk_Bost,function(a)
      ew(CFrame.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136))
       if (Vector3.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 0.1 or not game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","Lantern")
-
+ end
 
 until game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false
-   end
+  
 end
 if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
       
