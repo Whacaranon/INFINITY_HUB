@@ -3742,7 +3742,7 @@ function AttackFunction()
 				debug.setupvalue(ac.attack, 4, AcAttack7)
 				debug.setupvalue(ac.attack, 7, AcAttack10)
 				for k, v in pairs(ac.animator.anims.basic) do
-					v:Play(0.01,0.01,0.01,0.05,0.1,1,2,0.02)
+					v:Play(0.01,0.01,0.01,0.05,0.1,0.12,0.02)
 				end                 
 				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
 					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
@@ -6374,6 +6374,18 @@ _G.Auto_Sea_Event = a
 StopTween(_G.Auto_Sea_Event)
 end)
 
+
+spawn(function()
+ while wait() do
+  pcall(function()
+   if AutoClick then
+     game:GetService'VirtualUser':CaptureController()
+									game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+end
+end)
+end
+end)
+
 spawn(function()
  while wait() do
   pcall(function()
@@ -6389,14 +6401,14 @@ spawn(function()
 									AutoHaki()
 									EquipWeapon(_G.SelectWeapon)
 									topos(v.Head.CFrame * CFrame.new(0,50,0))
-									game:GetService'VirtualUser':CaptureController()
-									game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+									AutoClick = true
 								until not  _G.Auto_Sea_Event or not v.Parent or v.Humanoid.Health <= 0 
 						
 end
 								end
 								end
-								end
+								AutoClick = false
+end
 
 								end)
 								end
