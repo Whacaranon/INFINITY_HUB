@@ -6368,9 +6368,8 @@ end
 Main:AddSeperatorLeft("Sea Event")
 
 Main:AddDropdownLeft("Select Boat",{"Lantern","Guardian"},function(value)
-_G.SelectBoat = a
+_G.SelectBoat = value
 end)
-
 
  Main:AddToggleLeft("Auto Sea Event",_G.Auto_Sea_Event,function(a)
 _G.Auto_Sea_Event = a
