@@ -6393,18 +6393,19 @@ spawn(function()
       for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
           if (v.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 900 then
-          
+           if v.Name == "Shark" or v.Name == "Piranha" or v.Name == "Terrorshark"then
 				
 								repeat wait()
- game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-								print(v)
+                                                                game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
+								
 									AutoHaki()
 									EquipWeapon(_G.SelectWeapon)
 									topos(v.Head.CFrame * CFrame.new(0,57,0))
                                     v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-									AutoClick = true
+									 game:GetService'VirtualUser':CaptureController()
+	                                                                 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 								until not  _G.Auto_Sea_Event or not v.Parent or v.Humanoid.Health <= 0 
-						
+				end		
 end
 								end
 								end
@@ -10740,9 +10741,9 @@ end)
         if not _G.RTXMode then return end
         while _G.RTXMode do wait()
             a.Ambient = Color3.fromRGB(255, 255, 255)
-            a.Brightness = 0
-            c.Brightness = 0
-            c.Contrast = 0
+            a.Brightness = 10
+            c.Brightness = 10
+            c.Contrast = 2
             c.TintColor = Color3.fromRGB(255, 255, 255)
             game.Lighting.FogEnd = 9e9
             if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
