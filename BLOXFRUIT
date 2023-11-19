@@ -6364,15 +6364,19 @@ function BTP(Pos)
 	Char.HumanoidRootPart.CFrame = Pos
 end
     
- 
 
-    
 Main:AddSeperatorLeft("Sea Event")
+
+Main:AddDropdownLeft("Select Boat",{"Lantern","Guardian},function(value)
+_G.SelectBoat = a
+end)
+
 
  Main:AddToggleLeft("Auto Sea Event",_G.Auto_Sea_Event,function(a)
 _G.Auto_Sea_Event = a
 StopTween(_G.Auto_Sea_Event)
 end)
+
 
 
 spawn(function()
@@ -6390,22 +6394,17 @@ spawn(function()
  while wait() do
   pcall(function()
    if _G.Auto_Sea_Event then
-      for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-       if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
-          if (v.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 900 then
+      for i,v in pairs(game.Workspace.Enemies:GetChildren()) do    
            if v.Name == "Shark" or v.Name == "Piranha" or v.Name == "Terrorshark"then
-				
+	     game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
 								repeat wait()
-                                                                game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
-								
-									AutoHaki()
-									EquipWeapon(_G.SelectWeapon)
-									topos(v.Head.CFrame * CFrame.new(0,57,0))
-                                    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-									 game:GetService'VirtualUser':CaptureController()
-	                                                                 game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                                AutoHaki()
+								EquipWeapon(_G.SelectWeapon)
+								topos(v.Head.CFrame * CFrame.new(0,55,0))
+			                                 	game:GetService'VirtualUser':CaptureController()
+	                                                        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 								until not  _G.Auto_Sea_Event or not v.Parent or v.Humanoid.Health <= 0 
-				end		
+						
 end
 								end
 								end
@@ -6425,17 +6424,14 @@ Main:AddToggleLeft("Auto Dirvve Bost",_G.Auto_Walk_Bost,function(a)
   while wait() do
    pcall(function()
     if _G.Auto_Walk_Bost then
-      if not game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
+      if not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) then
      repeat wait()
-
-     print("Spawn Bost")
-
      ew(CFrame.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136))
-      if (Vector3.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 0.1 or not game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","Lantern")
+      if (Vector3.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 0.1 or not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
  end
 
-until game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false
+until game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false
   
 end
 if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
@@ -6445,12 +6441,12 @@ ew(CFrame.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
                   game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end
-until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
+until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
        repeat wait()
-ew(game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame)
+ew(game:GetService("Workspace").Boats._G.SelectBoat.VehicleSeat.CFrame)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"A",false,game)
-         until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
+         until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
 
         
     
@@ -10741,9 +10737,9 @@ end)
         if not _G.RTXMode then return end
         while _G.RTXMode do wait()
             a.Ambient = Color3.fromRGB(255, 255, 255)
-            a.Brightness = 10
-            c.Brightness = 10
-            c.Contrast = 2
+            a.Brightness = 1
+            c.Brightness = 1
+            c.Contrast = 1
             c.TintColor = Color3.fromRGB(255, 255, 255)
             game.Lighting.FogEnd = 9e9
             if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
