@@ -6380,7 +6380,7 @@ spawn(function()
   pcall(function()
    if AutoClick then
      game:GetService'VirtualUser':CaptureController()
-									game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+	game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 end
 end)
 end
@@ -6408,7 +6408,7 @@ spawn(function()
 end
 								end
 								end
-								AutoClick = false
+								
 end
 
 								end)
@@ -10774,7 +10774,7 @@ end)
 			while wait() do
 				pcall(function()
 					if RemoveFog then
-						game.Lighting.FogEnd = 0
+						game.Lighting.FogEnd = 9e9
 						game:GetService("Lighting").LightingLayers.MirageFog:Destroy() 
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
