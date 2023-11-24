@@ -11373,8 +11373,8 @@ function AttackNoCD()
             debug.setupvalue(AC.attack, 7, u10)
             pcall(function()
                 for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play(0.01,0.01,0.01,0.05,1,0.2,)
-				end   
+                    v:Play(0.01,0.01,0.01,0.05,0.2)
+			
                 end                  
             end)
             if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
