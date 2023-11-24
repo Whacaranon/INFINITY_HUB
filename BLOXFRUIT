@@ -11373,7 +11373,7 @@ function AttackNoCD()
             debug.setupvalue(AC.attack, 7, u10)
             pcall(function()
                 for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play(0.01,0.03,0.01,0.05,0.2,0)
+                    v:Play(0.01,0.03,0.01,0.05,0.2)
 			
                 end                  
             end)
