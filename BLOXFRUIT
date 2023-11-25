@@ -6438,11 +6438,11 @@ Main:AddToggleLeft("Unlock Speed Boat",_G.USB,function(a)
 _G.USB = a
 end)
 
-spawm(function()
+spawn(function()
  while wait() do
   pcall(function()
  if _G.USB then
-  game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.MaxSpeed = _G.Speed
+  game:GetService("Workspace").Boats:FirstChild(_G.SelectB).VehicleSeat.MaxSpeed = _G.Speed
 end
 end)
 end
