@@ -3742,7 +3742,7 @@ function AttackFunction()
 				debug.setupvalue(ac.attack, 4, AcAttack7)
 				debug.setupvalue(ac.attack, 7, AcAttack10)
 				for k, v in pairs(ac.animator.anims.basic) do
-					v:Play(0.01,0.01,0.01,0.05,0.1,0.12,0.02)
+					v:Play(0.01,0.01,0.01,0.05,0.1)
 				end                 
 				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
 					game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
@@ -3756,11 +3756,10 @@ end
 
 spawn(function()
     pcall(function()
-    while task.wait(0.04) do
+    while task.wait() do
         if _G.FastAttack then
-            if syn or not syn then
             AttackFunction()
-            end
+           
            end
         end
     end)
@@ -6394,7 +6393,7 @@ spawn(function()
   pcall(function()
    if _G.Auto_Sea_Event then
       for i,v in pairs(game.Workspace.Enemies:GetChildren()) do    
-           if v.Name == "Shark" or v.Name == "Piranha" or v.Name == "Terrorshark"then
+           if v.Name == "Shark" or v.Name == "Piranha" or v.Name == "Terrorshark" then
 	     game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
 								repeat wait()
                                                                 AutoHaki()
@@ -6418,37 +6417,37 @@ end
 Main:AddToggleLeft("Auto Dirvve Bost",_G.Auto_Walk_Bost,function(a)
  _G.Auto_Walk_Bost = a
  end)
- 
+
  spawn(function()
   while wait() do
    pcall(function()
     if _G.Auto_Walk_Bost then
-      if not game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
+      if not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) then
      repeat wait()
 
      print("Spawn Bost")
 
      ew(CFrame.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136))
-      if (Vector3.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 0.1 or not game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
-                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","Lantern")
+      if (Vector3.new(-16208.0654, 10.4592094, 404.354523, -0.0460886136, 1.71953063e-09, -0.998937368, -6.43779785e-08, 1, 4.69160799e-09, 0.998937368, 6.45257998e-08, -0.0460886136) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 0.1 or not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
  end
 
-until game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false
+until game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false
   
 end
-if game:GetService("Workspace").Boats:FindFirstChild("Lantern") then
+if game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) then
    
          repeat wait()
 ew(CFrame.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931))
        if (Vector3.new(-44311.5039, 17.4374886, 5763.37646, 0.0975984931, 0, -0.995225847, 0, 1, 0, 0.995225847, 0, 0.0975984931) - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
-                  game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                  game:GetService("Workspace").Boats[_G.SelectBoat].VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end
-until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
+until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or game.Workspace.Enemies:FindFirstChild("Shark") or  game.Workspace.Enemies:FindFirstChild("Piranha") or  game.Workspace.Enemies:FindFirstChild("Terrorshark")
        repeat wait()
 ew(game:GetService("Workspace").Boats.Lantern.VehicleSeat.CFrame)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"A",false,game)
-         until not game:GetService("Workspace").Boats:FindFirstChild("Lantern") or _G.Auto_Walk_Bost == false or v.Humanoid.Health >= 0
+         until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or game.Workspace.Enemies:FindFirstChild("Shark") or  game.Workspace.Enemies:FindFirstChild("Piranha") or  game.Workspace.Enemies:FindFirstChild("Terrorshark")
 
         
     
@@ -11321,85 +11320,8 @@ end
     Misc:AddLabelRight("Ui : ball naja#3764")
     Misc:AddLabelRight("Dev : ball naja#3764")
         Setting:AddSeperatorLeft("Beta")
-Setting:AddToggleLeft("FAT",nil,function(a)
-Fat = a
-end)
 
-local plr = game.Players.LocalPlayer
 
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
-            end
-        end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 6)
-            local u7 = debug.getupvalue(AC.attack, 4)
-            local u10 = debug.getupvalue(AC.attack, 7)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 6, u9)
-            debug.setupvalue(AC.attack, 4, u7)
-            debug.setupvalue(AC.attack, 7, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play(0.01,0.01,0.01,0.05,0.2)
-			
-                end                  
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
-local cac
-if Fat then 
-	cac=task.wait
-else
-	cac=wait
-end
-spawn(function()
-while cac() do 
-pcall(function()
- if Fat then
-	AttackNoCD()
-end
-end)
-end
-end)
 
    
 
