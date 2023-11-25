@@ -6414,7 +6414,7 @@ else
           BoatsName = {}
 
 for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
-  table.insert(BoatsName ,v.Name)
+  table.insert(BoatsName ,v.Name    v.Name.Owner.Value)
 end
 
 local Boats = Main:AddDropdownLeft("Selected Boats",BoatsName,function(plys)
@@ -6425,7 +6425,7 @@ end)
 Main:AddButtonLeft("Refresh Boat",function()
   Boats:Clear()
   for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
-     Boats:Add(v.Name)
+     Boats:Add(v.Name    v.Name.Owner.Value)
   end
 end)
 
@@ -6434,7 +6434,7 @@ Main:AddSliderLeft("Selected Speed Boat",1,500,_G.Speed,function(value)
     _G.Speed = value
 end)
 
-Main:AddButtonLeft("Unlock Speed Boat",_G.USB,function(a)
+Main:AddToggleLeft("Unlock Speed Boat",_G.USB,function(a)
 _G.USB = a
 end)
 
