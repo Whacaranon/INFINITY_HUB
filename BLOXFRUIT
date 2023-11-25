@@ -6414,7 +6414,7 @@ else
           BoatsName = {}
 
 for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
-  table.insert(BoatsName ,v.Name..""..v.Name.Owner.Value)
+  table.insert(BoatsName ,v.Name     v.Name.Owner.Value)
 end
 
 local Boats = Main:AddDropdownLeft("Selected Boats",BoatsName,function(plys)
