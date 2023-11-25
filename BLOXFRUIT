@@ -6450,7 +6450,7 @@ end)
 
 Main:AddToggleLeft("Boat Flying",_G.BoatFly,function(a)
     if a then
-    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,430,1000)
+    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,280,1000)
     else
     game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
     end
