@@ -6442,7 +6442,7 @@ spawm(function()
  while wait() do
   pcall(function()
  if _G.USB then
-  game:GetService("Workspace").Boats:FindFirstChild(_G.SelectB).VehicleSeat.MaxSpeed = _G.Speed
+  game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.MaxSpeed = _G.Speed
 end
 end)
 end
