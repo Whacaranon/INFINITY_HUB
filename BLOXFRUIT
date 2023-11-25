@@ -6426,7 +6426,6 @@ end)
 
 
 Main:AddButtonLeft("Refresh Boat",function()
-  BoatsName = {}
   Boats:Clear()
   for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
      Boats:Add(v.Name)
