@@ -6404,7 +6404,7 @@ else
     end
          until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or game.Workspace.Enemies:FindFirstChild("Shark") or  game.Workspace.Enemies:FindFirstChild("Piranha") or  game.Workspace.Enemies:FindFirstChild("Terrorshark")
 
-        end
+        
         end
          
          
