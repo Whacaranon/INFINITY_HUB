@@ -6351,7 +6351,7 @@ spawn(function()
 								repeat wait()
                                                                 AutoHaki()
 								EquipWeapon(_G.SelectWeapon)
-								topos(v.Head.CFrame * CFrame.new(0,55,0))
+								topos(v.Head.CFrame * CFrame.new(0,50,0))
 			                                 	game:GetService'VirtualUser':CaptureController()
 	                                                        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 								until not  _G.Auto_Sea_Event or not v.Parent or v.Humanoid.Health <= 0 
