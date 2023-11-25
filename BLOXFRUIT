@@ -6429,18 +6429,28 @@ Main:AddButtonLeft("Refresh Boat",function()
   end
 end)
 
-_G.Speed = 19
-Main:AddSliderLeft("Selected Speed Boat",1,100,_G.Speed,function(value)
+_G.Speed = 250
+Main:AddSliderLeft("Selected Speed Boat",1,500,_G.Speed,function(value)
     _G.Speed = value
 end)
 
 Main:AddToggleLeft("Unlock Speed Boat",_G.UnlockSpeedBoat,function(a)
+_G.UnlockSpeedBoat = a
+end)
+
+spawn(function()
+ while wait do
+ pcall(function()
+ if _G.UnlockSpeedBoat then
 game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.MaxSpeed = _G.Speed
+end
+end)
+end
 end)
 
 Main:AddToggleLeft("Boat Flying",_G.BoatFly,function(a)
     if a then
-    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,230,1000)
+    game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,430,1000)
     else
     game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
     end
