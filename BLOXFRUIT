@@ -6791,7 +6791,7 @@ for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
     
        Main:AddSeperatorLeft("Mastery")
     
-     _G.Kill_At = 19
+     _G.Kill_At = 31
     Main:AddSliderLeft("Kill At %",1,100,_G.Kill_At,function(value)
         _G.Kill_At = value
     end)
