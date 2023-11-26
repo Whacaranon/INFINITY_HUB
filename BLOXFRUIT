@@ -8555,7 +8555,7 @@ end)
 
 		Main:AddToggleLeft("Spawn Katakuri",_G.SpawmKatakuri,function(a)
 _G.SpawmKatakuri = a
-end
+end)
 spawn(function()
  while wait() do
    pcall(function()
