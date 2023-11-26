@@ -8553,19 +8553,7 @@ end)
 		end
 	end)
 
-		Main:AddToggleLeft("Spawn Katakuri",_G.SpawmKatakuri,function(a)
-_G.SpawmKatakuri = a
-end)
-spawn(function()
- while wait() do
-   pcall(function()
-      if _G.SpawmKatakuri then
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")
-end
-end)
-end
-end)
-
+		
 		
 Main:AddSeperatorLeft("Hallow Scythe")
 Main:AddToggleLeft("Auto Hallow Scythe",_G.AutoFarmBossHallow,function(value)
