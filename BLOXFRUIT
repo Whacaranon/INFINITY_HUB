@@ -3708,7 +3708,7 @@ _G.FastAttack = true
         cac=wait
     end
     spawn(function()
-    while cac(0.03) do 
+    while cac(0.01) do 
     pcall(function()
      if _G.FastAttack then
         AttackNoCD()
