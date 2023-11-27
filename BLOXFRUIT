@@ -11135,9 +11135,26 @@ end
     Misc:AddSeperatorRight("Credit")
     Misc:AddLabelRight("Ui : ball naja#3764")
     Misc:AddLabelRight("Dev : ball naja#3764")
-        Setting:AddSeperatorLeft("Beta")
+        Setting:AddSeperatorLeft("Beta function")
+ Setting:AddSeperatorRight("Dev Function")
+    Setting:AddTextboxRight("key dev","",true,function(value)
+_G.GetFunction = value
+end)
 
-
+if _G.GetFunction = "65201010068" then
+Setting:AddButtonRight("Copy piace Id",function()
+setclipboard(tostring(game.PlaceId))
+end)
+Setting:AddButtonRight("Copy",function()
+setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
+end)
+Setting:AddButtonRight("Steal Spy",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Whacaranon/Spy/main/README.md"))()
+end)
+Setting:AddButtonRight("Dex V3",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+end
 
    
 
