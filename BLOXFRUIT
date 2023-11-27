@@ -11140,8 +11140,6 @@ end
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
 end)
-
-if _G.GetFunction == "65201010068" then
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
@@ -11154,6 +11152,14 @@ end)
 Setting:AddButtonRight("Dex V3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
-end
+
+
+
 
    
+
+    else
+    game.Players.LocalPlayer:Kick("\224\185\132\224\184\161\224\185\136\224\184\158\224\184\154\224\185\129\224\184\161\224\184\158")
+    wait(1)
+    game:Shutdown()
+end
