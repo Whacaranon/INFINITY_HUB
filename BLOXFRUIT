@@ -11139,7 +11139,7 @@ end
  Setting:AddSeperatorRight("Dev Function")
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
-end)
+if _G.GetFunction  == "65201010068" then
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
@@ -11151,6 +11151,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Whacaranon/Spy/main/R
 end)
 Setting:AddButtonRight("Dex V3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+end
 end)
 
 
