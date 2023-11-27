@@ -11141,7 +11141,7 @@ end
 _G.GetFunction = value
 end)
 
-if _G.GetFunction = "65201010068" then
+if _G.GetFunction == "65201010068" then
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
