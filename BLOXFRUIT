@@ -6399,7 +6399,7 @@ else
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
          game:GetService("VirtualInputManager"):SendKeyEvent(true,"A",false,game)
         end
-         until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or game.Workspace.Enemies:FindFirstChild("Shark") or  game.Workspace.Enemies:FindFirstChild("Piranha") or  game.Workspace.Enemies:FindFirstChild("Terrorshark")
+         until not game:GetService("Workspace").Boats:FindFirstChild(_G.SelectBoat) or _G.Auto_Walk_Bost == false or game.Workspace.Enemies:FindFirstChild("Shark") or game.Workspace.Enemies:FindFirstChild("Piranha") or game.Workspace.Enemies:FindFirstChild("Terrorshark")
 
         
         end
@@ -10589,9 +10589,12 @@ end)
 					if RemoveFog then
 						game.Lighting.FogEnd = 9e9
 						game:GetService("Lighting").LightingLayers.MirageFog:Destroy() 
+                                                  	game:GetService("Lighting").LightingLayers.DarkFog:Destroy() 
+   	game:GetService("Lighting").SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
 						        v:Destroy() 
+
 						    end 
 					        end
 
