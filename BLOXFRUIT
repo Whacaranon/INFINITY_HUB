@@ -11148,7 +11148,7 @@ if _G.GetFunction  == "65201010068" then
         Text = "Succeed"; -- what the text says (ofc)
         Icon = ""; -- the image if u want. 
         Duration = 2; -- how long the notification should in secounds
-    })
+    }
     wait(1)
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
