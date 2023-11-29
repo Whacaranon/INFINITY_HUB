@@ -11143,13 +11143,7 @@ end
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
 if _G.GetFunction  == "65201010068" then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Notify"; -- the title (ofc)
-        Text = "Succeed"; -- what the text says (ofc)
-        Icon = ""; -- the image if u want. 
-        Duration = 2; -- how long the notification should in secounds
-    }
-    wait(1)
+    
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
@@ -11163,7 +11157,7 @@ Setting:AddButtonRight("Dex V3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
 end
-end
+
 end)
 
 
