@@ -11140,10 +11140,11 @@ end
     Misc:AddLabelRight("Dev : ball naja#3764")
         Setting:AddSeperatorLeft("Beta function")
  Setting:AddSeperatorRight("Dev Function")
+
+
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
-if _G.GetFunction  == "65201010068" then
- 
+if _G.GetFunction  == "65201010068" then 
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
