@@ -11143,12 +11143,6 @@ end
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
 if _G.GetFunction  == "65201010068" then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Notify"; -- the title (ofc)
-        Text = "Succeed"; -- what the text says (ofc)
-        Icon = ""; -- the image if u want. 
-        Duration = 2; -- how long the notification should in secounds
-    })
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
