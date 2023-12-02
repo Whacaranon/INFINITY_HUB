@@ -1,4 +1,4 @@
-2_G.JoinTeam = "Pirate"
+_G.JoinTeam = "Pirate"
 
 if game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("ChooseTeam") then
 	repeat wait()
@@ -3708,7 +3708,7 @@ _G.FastAttack = true
         cac=wait
     end
     spawn(function()
-    while cac(0.1) do 
+    while cac(0.01) do 
     pcall(function()
      if _G.FastAttack then
         AttackNoCD()
@@ -11140,15 +11140,20 @@ end
     Misc:AddLabelRight("Dev : ball naja#3764")
         Setting:AddSeperatorLeft("Beta function")
  Setting:AddSeperatorRight("Dev Function")
-
-
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
-if _G.GetFunction  == "65201010068" then 
+if _G.GetFunction  == "65201010068" then
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Notify"; -- the title (ofc)
+        Text = "Succeed"; -- what the text says (ofc)
+        Icon = ""; -- the image if u want. 
+        Duration = 2; -- how long the notification should in secounds
+    }
+    wait(1)
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
-Setting:AddButtonRight("Copy CFrame",function()
+Setting:AddButtonRight("Copy",function()
 setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))
 end)
 Setting:AddButtonRight("Steal Spy",function()
@@ -11158,7 +11163,11 @@ Setting:AddButtonRight("Dex V3",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
 end)
 end
+end
 end)
+
+
+
 
    
 
