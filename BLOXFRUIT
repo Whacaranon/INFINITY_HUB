@@ -5875,10 +5875,8 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
             if _G.AutoFarm then
                 pcall(function()
                     local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
-                    if not string.find(QuestTitle, NameMon) then
-                        StartMagnet = false
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-                    end
+                    if string.find(QuestTitle, NameMon) then
+                      
                     if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                         StartMagnet = false
                         CheckQuest()
@@ -5887,7 +5885,11 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
                             wait(1.2)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
                             wait(0.5)
+else
+StartMagnet = false
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                         end
+end
                     elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                         CheckQuest()
                         if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
