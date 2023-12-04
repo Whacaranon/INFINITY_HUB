@@ -5890,10 +5890,10 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
                         end
                     elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                         CheckQuest()
-                        if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
+                        if game:GetService("Workspace").Enemies:FindFirstChild(Mon) then
                             for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                                 if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                                    if v.Name == NameMon then
+                                    if v.Name == Mon then
                                         if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
                                             repeat task.wait()
                                                 EquipWeapon(_G.SelectWeapon)
@@ -5916,8 +5916,8 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
                             end
                         else
                             StartMagnet = false
-                            if game:GetService("ReplicatedStorage"):FindFirstChild(NameMon) then
-                                topos(game:GetService("ReplicatedStorage"):FindFirstChild(NameMon).HumanoidRootPart.CFrame * CFrame.new(0,0,0))
+                            if game:GetService("ReplicatedStorage"):FindFirstChild(Mon) then
+                                topos(game:GetService("ReplicatedStorage"):FindFirstChild(Mon).HumanoidRootPart.CFrame * CFrame.new(0,0,0))
                             else
                                 if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 200 then
                                     if PUK ~= nil then
