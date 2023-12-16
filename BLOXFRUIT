@@ -6410,7 +6410,7 @@ for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
 end
 
 local Boats = Main:AddDropdownLeft("Selected Boats",BoatsName,function(plys)
-  _G.SelectB = plyscx
+  _G.SelectB = plys
 end)
 
 
