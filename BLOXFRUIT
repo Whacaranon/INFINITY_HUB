@@ -6421,7 +6421,7 @@ Main:AddButtonLeft("Refresh Boat",function()
   end
 end)
 
-_G.Speed = "250"
+_G.Speed = 250
 Main:AddSliderLeft("Selected Speed Boat",1,500,_G.Speed,function(value)
     _G.Speed = value
 end)
