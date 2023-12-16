@@ -3485,12 +3485,6 @@ end)
         end)
     end)
     
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-        game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-        wait(1)
-        game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end)
-    
     
 
 
@@ -6427,7 +6421,7 @@ Main:AddButtonLeft("Refresh Boat",function()
   end
 end)
 
-_G.Speed = 250
+_G.Speed = "250"
 Main:AddSliderLeft("Selected Speed Boat",1,500,_G.Speed,function(value)
     _G.Speed = value
 end)
@@ -6456,7 +6450,7 @@ Main:AddToggleLeft("Boat Flying",_G.BoatFly,function(a)
 end)
          
 Main:AddButtonLeft("Bring Boat",function()
-         game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+         game:GetService("Workspace").Boats:FirstChild(_G.SelectB).VehicleSeat.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 end)
 Main:AddSeperatorLeft("Race V4")
 
