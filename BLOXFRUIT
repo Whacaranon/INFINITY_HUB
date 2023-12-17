@@ -10575,17 +10575,16 @@ end)
         RemoveFog = value
     end)
     
-  task.spawn(function()
+
+		 task.spawn(function()
 			while wait() do
 				pcall(function()
 					if RemoveFog then
 						game.Lighting.FogEnd = 0
-						game.Lighting.LightingLayers.MirageFog:Destroy() 
-                                                game.Lighting.LightingLayers.DarkFog:Destroy() 
    	                                          game.Lighting.SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
-						    if v:IsA("Atmosphere") then 
-						        v:Destroy() 
+						    if v.Name == "Atmosphere" or v.Name == " MirageFog" or v.Name == "DarkFog" then 
+						      v:Destroy()
 
 						    end 
 					        end
