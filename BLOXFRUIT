@@ -21056,7 +21056,7 @@ end)
 					if RemoveFog then
 						game.Lighting.FogEnd = 0
 						game.Lighting.LightingLayers.MirageFog:Destroy() 
-                                                game.2Lighting.LightingLayers.DarkFog:Destroy() 
+                                                game.Lighting.LightingLayers.DarkFog:Destroy() 
    	                                          game.Lighting.SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
