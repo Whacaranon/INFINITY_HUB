@@ -7544,7 +7544,7 @@ end)
     local Boss = {}
     
     for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-        if string.find(v.Name, "Boss") then
+        if string.find(v.Name) then
             if v.Name == "Ice Admiral [Lv. 700] [Boss]" then
                 else
                 table.insert(Boss, v.Name)
@@ -7559,7 +7559,7 @@ end)
     Main:AddButtonLeft("Reset Boss",function()
         BossName:Clear()
             for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-            if string.find(v.Name, "Boss") or string.find(v.Name, "Raid Boss") then
+            if string.find(v.Name) or string.find(v.Name) then
                 BossName:Add(v.Name) 
             
             end
@@ -7617,7 +7617,7 @@ end)
             if _G.AutoAllBoss then
                 pcall(function()
                     for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
-                        if string.find(v.Name,"Boss") or string.find(v.Name,"Raid Boss") then
+                        if string.find(v.Name) or string.find(v.Name) then
                             if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
                                 repeat task.wait()
                                     AutoHaki()
@@ -10580,9 +10580,9 @@ end)
 				pcall(function()
 					if RemoveFog then
 						game.Lighting.FogEnd = 0
-						game:GetService("Lighting").LightingLayers.MirageFog:Destroy() 
-                                                game:GetService("Lighting").LightingLayers.DarkFog:Destroy() 
-   	                                          game:GetService("Lighting").SeaTerrorCC:Destroy()
+						game.Lighting.LightingLayers.MirageFog:Destroy() 
+                                                game.2Lighting.LightingLayers.DarkFog:Destroy() 
+   	                                          game.Lighting.SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
 						        v:Destroy() 
