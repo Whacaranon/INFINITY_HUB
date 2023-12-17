@@ -10575,14 +10575,14 @@ end)
         RemoveFog = value
     end)
     
-    task.spawn(function()
+  task.spawn(function()
 			while wait() do
 				pcall(function()
 					if RemoveFog then
 						game.Lighting.FogEnd = 0
-						game:GetService("Lighting").LightingLayers.MirageFog:Destroy() 
-                                                game:GetService("Lighting").LightingLayers.DarkFog:Destroy() 
-   	                                          game:GetService("Lighting").SeaTerrorCC:Destroy()
+						game.Lighting.LightingLayers.MirageFog:Destroy() 
+                                                game.Lighting.LightingLayers.DarkFog:Destroy() 
+   	                                          game.Lighting.SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
 						        v:Destroy() 
@@ -10594,6 +10594,7 @@ end)
 				end)
 			end
 		end)
+
 
     
     Misc:AddSeperatorRight("Screen Shot Kaitan")
