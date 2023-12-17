@@ -3683,7 +3683,7 @@ _G.FastAttack = true
                 debug.setupvalue(AC.attack, 7, u10)
                 pcall(function()
                     for k, v in pairs(AC.animator.anims.basic) do
-                        v:Play(0.01,0.01,0.01,0.2)
+                        v:Play(0.01,0.01,0.2)
                 
                     end                  
                 end)
@@ -3724,7 +3724,7 @@ spawn(function()
                     CameraShaker:Stop()
                     y.activeController.timeToNextAttack = 1
                     y.activeController.timeToNextAttack = 0
-                    y.activeController.hitboxMagnitude = 9999
+                    y.activeController.hitboxMagnitude = 100
                     y.activeController.active = false
                     y.activeController.timeToNextBlock = 0
                     y.activeController.focusStart = 0
@@ -3750,7 +3750,6 @@ end)
                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                         if _G.AutoFarm and StartMagnet and v.Name == NameMon and (NameMon == "Factory Staff" or NameMon == "Monkey" or NameMon == "Dragon Crew Warrior" or NameMon == "Dragon Crew Archer") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 and (v.HumanoidRootPart.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 220 then
                             v.HumanoidRootPart.CFrame = PosMon
-                            v.Humanoid:ChangeState(14)
                             v.HumanoidRootPart.CanCollide = false
                             v.Head.CanCollide = false
                             if v.Humanoid:FindFirstChild("Animator") then
@@ -3911,7 +3910,7 @@ end)
                         end
                         if _G.Auto_Bone and StartMagnetBoneMon then
                             if (v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]") and (v.HumanoidRootPart.Position - PosMonBone.Position).Magnitude <= 250 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+          
                                 v.Humanoid:ChangeState(14)
                                 v.HumanoidRootPart.CanCollide = false
                                 v.Head.CanCollide = false
@@ -3923,7 +3922,7 @@ end)
                             end
                       end
                         if _G.Auto_Bone2 and StartMagnetBoneMon2 then
-                            if (v.HumanoidRootPart.Position - PosMonBone2.Position).Magnitude <= 300 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                            if (v.HumanoidRootPart.Position - PosMonBone2.Position).Magnitude <= 250 and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                 v.HumanoidRootPart.CanCollide = false
                                 v.Head.CanCollide = false
                                 v.HumanoidRootPart.CFrame = PosMonBone2
@@ -10580,10 +10579,10 @@ end)
 			while wait() do
 				pcall(function()
 					if RemoveFog then
-						game.Lighting.FogEnd = 9e9
+						game.Lighting.FogEnd = 0
 						game:GetService("Lighting").LightingLayers.MirageFog:Destroy() 
-                                                  	game:GetService("Lighting").LightingLayers.DarkFog:Destroy() 
-   	game:GetService("Lighting").SeaTerrorCC:Destroy()
+                                                game:GetService("Lighting").LightingLayers.DarkFog:Destroy() 
+   	                                          game:GetService("Lighting").SeaTerrorCC:Destroy()
 						for i,v in pairs(game:GetService("Lighting"):GetDescendants()) do 
 						    if v:IsA("Atmosphere") then 
 						        v:Destroy() 
@@ -11033,7 +11032,7 @@ end
     end)
     
     Misc:AddButtonRight("Unlock FPS",function()
-        setfpscap(240)
+        setfpscap(120)
     end)
     
     Misc:AddButtonRight("Max Zoom",function()
