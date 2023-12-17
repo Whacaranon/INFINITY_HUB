@@ -11131,6 +11131,28 @@ end
     Misc:AddLabelRight("Ui : ball naja#3764")
     Misc:AddLabelRight("Dev : ball naja#3764")
         Setting:AddSeperatorLeft("Beta function")
+
+
+Setting:AddToggleLeft("Auto Get Ember",Beta,function(a)
+Beta = a
+end)
+
+spawn(function()
+ while wait() do
+  pcall(function()
+    if Beta then
+     for i,v in paris(game:GetService("Workspace"):GetChildren()) do
+       if v.Name == "EmberTemplate" then
+         repeat wait()
+          topos(v.Part)
+         until not Beta or not v.Parent
+       end
+        end
+    end
+end)
+end
+end) 
+
  Setting:AddSeperatorRight("Dev Function")
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
@@ -11149,10 +11171,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scrip
 end)
 end
 end)
+KitsuneIsland
 
-
-
-
+ game:GetService("Workspace").EmberTemplate.Part
+ game:GetService("Workspace").EmberTemplate.Part
    
 
     else
