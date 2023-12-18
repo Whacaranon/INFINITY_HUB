@@ -5867,10 +5867,7 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
             if _G.AutoFarm then
                 pcall(function()
                     local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
-                    if not string.find(QuestTitle, NameMon) then
-                        StartMagnet = false
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-                    end
+                  
                     if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                         StartMagnet = false
                         CheckQuest()
@@ -11142,7 +11139,7 @@ spawn(function()
   pcall(function()
     if Beta then
      for i,v in paris(game:GetService("Workspace"):GetChildren()) do
-       if v.Name == "EmberTemplate" then
+       if v.Name == "Ember Template" then
          repeat wait()
 topos(v.Part.CFrame)
 print(v)
