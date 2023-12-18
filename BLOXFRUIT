@@ -11130,20 +11130,19 @@ end
         Setting:AddSeperatorLeft("Beta function")
 
 
-Setting:AddToggleLeft("Auto Get Ember",Beta,function(a)
-Beta = a
+Setting:AddToggleLeft("Auto Get Ember",_G.AutoEmber,function(a)
+_G.AutoEmber = a
 end)
-Beta = true
+
 spawn(function()
  while wait() do
   pcall(function()
-    if Beta then
-     for i,v in paris(game:GetService("Workspace"):GetChildren()) do
-       if v.Name == "Ember Template" then
+    if _G.AutoEmber then
+for i,v in pairs(workspace:GetChildren()) do
+       if v.Name == "EmberTemplate" then
          repeat wait()
 topos(v.Part.CFrame)
-print(v)
-         until not Beta or not v.Parent
+         until not _G.AutoEmber or not v.Parent
        end
         end
     end
