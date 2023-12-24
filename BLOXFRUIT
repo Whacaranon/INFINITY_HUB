@@ -6167,24 +6167,29 @@ StopTween(_G.Chest)
 end)
 
 
-local children = game:GetService("Workspace").Map.MysticIsland.Chests:GetChildren()
 
-local totalChests = #children -- จำนวนทั้งหมดของลูกใน Chests
-local teleportedChests = 0 -- จำนวนลูกที่ถูก teleport ไปแล้ว
 spawn(function()
-while wait() do
- pcall(function()
-    if _G.Chest then
-    -- วนลูปผ่านรายการลูกทั้งหมด
-    for i, v in pairs(children) do
-        print("Teleporting to:", v.Name)
-        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(v.CFrame)        
-    end
-    end
-end)
-end
-end)
- 
+        while wait() do
+            if _G.Chest then
+                pcall(function()
+                    if game:GetService("Workspace").Map.MysticIsland.Chests:FindFirstChild("FragChest") or game:GetService("Workspace").Map.MysticIsland.Chests:FindFirstChild("DiamondChest") then
+                        for i,v in pairs(game:GetService("Workspace").Map.MysticIsland.Chests:GetChildren()) do
+                            if v.Name == "FragChest" or v.Name == "DiamondChest" then
+                                repeat wait()
+                                  Goto(v.CFrame)
+                                until _G.Chest == false or not v.Parent
+                     end
+                        end
+                    else
+                        if _G.ChestHop then
+                            Hop()
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+        
    Main:AddToggleLeft("Auto Find Mystic Island",_G.AutoMysticIsland2,function(value)
             _G.AutoMysticIsland2 = value
             StopTween()
@@ -8038,9 +8043,9 @@ end)
         while wait() do 
             if _G.Yeti and World1 then
                 pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Yeti [Lv. 110] [Boss]") then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Yeti") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Yeti [Lv. 110] [Boss]" then
+                            if v.Name == "Yeti" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
@@ -8060,8 +8065,8 @@ end)
                     else
                         StartMagnetYeti = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
-                           if game:GetService("ReplicatedStorage"):FindFirstChild("Yeti [Lv. 110] [Boss]") then
-                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Yeti [Lv. 110] [Boss]").HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+                           if game:GetService("ReplicatedStorage"):FindFirstChild("Yeti") then
+                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Yeti").HumanoidRootPart.CFrame * CFrame.new(0,30,0))
                             end
                         end
                     end
@@ -8079,9 +8084,9 @@ end)
         while wait() do 
             if _G.AutoRedioactive and World2 then
                 pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Factory Staff [Lv. 800]") then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Factory Staff") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Factory Staff [Lv. 800]" then
+                            if v.Name == "Factory Staff" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
@@ -8101,8 +8106,8 @@ end)
                     else
                         StartMagnetYeti = false
                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
-                           if game:GetService("ReplicatedStorage"):FindFirstChild("Factory Staff [Lv. 800]") then
-                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Factory Staff [Lv. 800]").HumanoidRootPart.CFrame * CFrame.new(0,30,0))
+                           if game:GetService("ReplicatedStorage"):FindFirstChild("Factory Staff") then
+                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Factory Staff").HumanoidRootPart.CFrame * CFrame.new(0,30,0))
                             end
                         end
                     end
@@ -8605,9 +8610,9 @@ end)
         while wait() do
             if _G.AutoBudySword then
                 pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Queen [Lv. 2175] [Boss]") then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Queen") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Cake Queen [Lv. 2175] [Boss]" then
+                            if v.Name == "Cake Queen" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
@@ -8624,8 +8629,8 @@ end)
                             end
                         end
                     else
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen [Lv. 2175] [Boss]") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen [Lv. 2175] [Boss]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Queen").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                         else
                             if _G.AutoBudySwordHop then
                                 Hop()
@@ -8642,7 +8647,7 @@ end)
     local Elite_Hunter_Status = Main:AddLabelLeft("")
     
              function ssr()
-                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
+                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
                     Elite_Hunter_Status:Set("Elite is : 🟢")  
                 else
                     Elite_Hunter_Status:Set("Elite is : 🔴")    
@@ -8849,9 +8854,9 @@ Main:AddSeperatorLeft("Observation")
         while wait() do
             if _G.AutoSaber then
                 pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Saber Expert") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Saber Expert [Lv. 200] [Boss]" then
+                            if v.Name == "Saber Expert" then
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     PosMonSaber = v.HumanoidRootPart.CFrame
                                     repeat task.wait()
@@ -8870,8 +8875,8 @@ Main:AddSeperatorLeft("Observation")
                             end
                         end
                     else
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert [Lv. 200] [Boss]") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert [Lv. 200] [Boss]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Saber Expert").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
                         else
                             if _G.AutoSaber_Hop then
                                 Hop()
@@ -8960,9 +8965,9 @@ Main:AddSeperatorLeft("Observation")
                 if _G.AutoMusketeerHat then
                     if game:GetService("Players").LocalPlayer.Data.Level.Value >= 1800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CitizenQuestProgress").KilledBandits == false then
                         if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Forest Pirate") and string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "50") and game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                            if game:GetService("Workspace").Enemies:FindFirstChild("Forest Pirate [Lv. 1825]") then
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Forest Pirate") then
                                 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                    if v.Name == "Forest Pirate [Lv. 1825]" then
+                                    if v.Name == "Forest Pirate" then
                                         repeat task.wait()
                                             pcall(function()
                                                 EquipWeapon(_G.SelectWeapon)
@@ -8992,9 +8997,9 @@ Main:AddSeperatorLeft("Observation")
                         end
                     elseif game:GetService("Players").LocalPlayer.Data.Level.Value >= 1800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CitizenQuestProgress").KilledBoss == false then
                         if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible and string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Captain Elephant") and game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                            if game:GetService("Workspace").Enemies:FindFirstChild("Captain Elephant [Lv. 1875] [Boss]") then
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Captain Elephant") then
                                 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                    if v.Name == "Captain Elephant [Lv. 1875] [Boss]" then
+                                    if v.Name == "Captain Elephant" then
                                         OldCFrameElephant = v.HumanoidRootPart.CFrame
                                         repeat task.wait()
                                             pcall(function()
@@ -9214,9 +9219,9 @@ Main:AddSeperatorLeft("Observation")
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hidden Key") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hidden Key") then
                         EquipWeapon("Hidden Key")
                         topos(CFrame.new(6571.1201171875, 299.23028564453, -6967.841796875))
-                    elseif game:GetService("Workspace").Enemies:FindFirstChild("Snow Lurker [Lv. 1375]") or game:GetService("Workspace").Enemies:FindFirstChild("Arctic Warrior [Lv. 1350]") then
+                    elseif game:GetService("Workspace").Enemies:FindFirstChild("Snow Lurker") or game:GetService("Workspace").Enemies:FindFirstChild("Arctic Warrior") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and v.Humanoid.Health > 0 then
+                            if (v.Name == "Snow Lurker" or v.Name == "Arctic Warrior") and v.Humanoid.Health > 0 then
                                 repeat task.wait()
                                     EquipWeapon(_G.SelectWeapon)
                                     AutoHaki()
@@ -9281,9 +9286,9 @@ Main:AddSeperatorLeft("Observation")
                                 elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 2") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flower 2") then
                                     topos(game:GetService("Workspace").Flower2.CFrame)
                                 elseif not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flower 3") and not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flower 3") then
-                                    if game:GetService("Workspace").Enemies:FindFirstChild("Zombie [Lv. 950]") then
+                                    if game:GetService("Workspace").Enemies:FindFirstChild("Zombie") then
                                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                            if v.Name == "Zombie [Lv. 950]" then
+                                            if v.Name == "Zombie" then
                                                 repeat task.wait()
                                                     AutoHaki()
                                                     EquipWeapon(_G.SelectWeapon)
@@ -9323,8 +9328,8 @@ Main:AddSeperatorLeft("Observation")
                 if _G.AutoBartilo then
                     if game:GetService("Players").LocalPlayer.Data.Level.Value >= 800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 0 then
                         if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Swan Pirates") and string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "50") and game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then 
-                            if game:GetService("Workspace").Enemies:FindFirstChild("Swan Pirate [Lv. 775]") then
-                                Ms = "Swan Pirate [Lv. 775]"
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Swan Pirate") then
+                                Ms = "Swan Pirate"
                                 for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                                     if v.Name == Ms then
                                         pcall(function()
@@ -9354,8 +9359,8 @@ Main:AddSeperatorLeft("Observation")
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","BartiloQuest",1)
                         end 
                     elseif game:GetService("Players").LocalPlayer.Data.Level.Value >= 800 and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 1 then
-                        if game:GetService("Workspace").Enemies:FindFirstChild("Jeremy [Lv. 850] [Boss]") then
-                            Ms = "Jeremy [Lv. 850] [Boss]"
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Jeremy") then
+                            Ms = "Jeremy"
                             for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                                 if v.Name == Ms then
                                     OldCFrameBartlio = v.HumanoidRootPart.CFrame
@@ -9374,7 +9379,7 @@ Main:AddSeperatorLeft("Observation")
                                     until not v.Parent or v.Humanoid.Health <= 0 or _G.AutoBartilo == false
                                 end
                             end
-                        elseif game:GetService("ReplicatedStorage"):FindFirstChild("Jeremy [Lv. 850] [Boss]") then
+                        elseif game:GetService("ReplicatedStorage"):FindFirstChild("Jeremy") then
                             repeat topos(CFrame.new(-456.28952, 73.0200958, 299.895966)) wait() until not _G.AutoBartilo or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-456.28952, 73.0200958, 299.895966)).Magnitude <= 10
                             wait(1.1)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo")
