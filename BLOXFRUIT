@@ -6167,29 +6167,24 @@ StopTween(_G.Chest)
 end)
 
 
+local children = game:GetService("Workspace").Map.MysticIsland.Chests:GetChildren()
 
+local totalChests = #children -- จำนวนทั้งหมดของลูกใน Chests
+local teleportedChests = 0 -- จำนวนลูกที่ถูก teleport ไปแล้ว
 spawn(function()
-        while wait() do
-            if _G.Chest then
-                pcall(function()
-                    if game:GetService("Workspace").Map.MysticIsland.Chests:FindFirstChild("FragChest") or game:GetService("Workspace").Map.MysticIsland.Chests:FindFirstChild("DiamondChest") then
-                        for i,v in pairs(game:GetService("Workspace").Map.MysticIsland.Chests:GetChildren()) do
-                            if v.Name == "FragChest" or v.Name == "DiamondChest" then
-                                repeat wait()
-                                  Goto(v.Position)
-                                until not v or _G.Chest == false or not v.Parent
-                     end
-                        end
-                    else
-                        if _G.ChestHop then
-                            Hop()
-                        end
-                    end
-                end)
-            end
-        end
-    end)
-        
+while wait() do
+ pcall(function()
+    if _G.Chest then
+    -- วนลูปผ่านรายการลูกทั้งหมด
+    for i, v in pairs(children) do
+        print("Teleporting to:", v.Name)
+        game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(v.CFrame)        
+    end
+    end
+end)
+end
+end)
+ 
    Main:AddToggleLeft("Auto Find Mystic Island",_G.AutoMysticIsland2,function(value)
             _G.AutoMysticIsland2 = value
             StopTween()
