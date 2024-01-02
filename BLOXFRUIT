@@ -6086,7 +6086,7 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
             end)
         end
     end)
-    Main:AddToggleLeft("TP To Kitsune Island",_G.KitsuneIsland.function(a)
+    Main:AddToggleLeft("TP To Kitsune Island",_G.KitsuneIsland,function(a)
     _G.KitsuneIsland = a
 StopTween(_G.KitsuneIsland)
 end)
