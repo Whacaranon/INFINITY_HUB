@@ -6118,7 +6118,6 @@ topos(v.Part.CFrame)
 end)
 end
 end) 
- elseif World3 then
     local ig = Main:AddLabelLeft("")
     
              function iop()
