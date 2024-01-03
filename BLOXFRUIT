@@ -6008,9 +6008,9 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
                                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ZQuestProgress","Begin")
                                 end
                                 wait(1.8)
-                                if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 1500] [Boss]") then
+                                if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra") then
                                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                        if v.Name == "rip_indra [Lv. 1500] [Boss]" then
+                                        if v.Name == "rip_indra" then
                                             OldCFrameThird = v.HumanoidRootPart.CFrame
                                             repeat task.wait()
                                                 AutoHaki()
@@ -6027,7 +6027,7 @@ Main:AddToggleLeft("Auto Farm",_G.AutoFarm,function(value)
                                             until _G.AutoThirdSea == false or v.Humanoid.Health <= 0 or not v.Parent
                                         end
                                     end
-                                elseif not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 1500] [Boss]") and (CFrame.new(-26880.93359375, 22.848554611206, 473.18951416016).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
+                                elseif not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra") and (CFrame.new(-26880.93359375, 22.848554611206, 473.18951416016).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 1000 then
                                     topos(CFrame.new(-26880.93359375, 22.848554611206, 473.18951416016))
                                 end
                             end
@@ -6118,6 +6118,7 @@ topos(v.Part.CFrame)
 end)
 end
 end) 
+ elseif World3 then
     local ig = Main:AddLabelLeft("")
     
              function iop()
@@ -7585,11 +7586,8 @@ end)
     local Boss = {}
     
     for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-        if string.find(v.Name, "Boss") then
-            if v.Name == "Ice Admiral [Lv. 700] [Boss]" then
-                else
-                table.insert(Boss, v.Name)
-            end
+        if v.Name == "Diamond" or v.Name == "Jeremy" or v.Name == "Fajita" v.Name == "Don Swan" or v.Name == "Smole Admiral" or v.Name == "Cursed Captain" or v.Name == "Awakened Ice Admiral" or v.Name == "Tide Keeper" or v.Name == "Saber Expert" or v.Name == "The Gorilla King" or v.Name == "Bobby" or v.Name == "Yeti" or v.Name == "Mob Leader" or v.Name == "Vice Admiral" or v.Name == "Warden" or v.Name == "Chief Warden" or v.Name == "Swan" or v.Name == "Magma Admiral" or v.Name == "Fishman Lord" or v.Name == "Wysper" or v.Name == "Thunder God" or v.Name == "Cyborg" or v.Name == "Kilo Admiral" or v.Name == "Captain Elephant" or v.Name == "Beautiful Pirate" or v.Name == "Longma" or v.Name == "Stone" or v.Name == "Island Empress" or v.Name == "Ice Admiral" then
+                table.insert(Boss, v)
         end
     end
     
@@ -7600,8 +7598,8 @@ end)
     Main:AddButtonLeft("Reset Boss",function()
         BossName:Clear()
             for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-            if string.find(v.Name, "Boss") or string.find(v.Name, "Raid Boss") then
-                BossName:Add(v.Name) 
+              if v.Name == "Diamond" or v.Name == "Jeremy" or v.Name == "Fajita" v.Name == "Don Swan" or v.Name == "Smole Admiral" or v.Name == "Cursed Captain" or v.Name == "Awakened Ice Admiral" or v.Name == "Tide Keeper" or v.Name == "Saber Expert" or v.Name == "The Gorilla King" or v.Name == "Bobby" or v.Name == "Yeti" or v.Name == "Mob Leader" or v.Name == "Vice Admiral" or v.Name == "Warden" or v.Name == "Chief Warden" or v.Name == "Swan" or v.Name == "Magma Admiral" or v.Name == "Fishman Lord" or v.Name == "Wysper" or v.Name == "Thunder God" or v.Name == "Cyborg" or v.Name == "Kilo Admiral" or v.Name == "Captain Elephant" or v.Name == "Beautiful Pirate" or v.Name == "Longma" or v.Name == "Stone" or v.Name == "Island Empress" or v.Name == "Ice Admiral" then
+                BossName:Add(v) 
             
             end
         end
@@ -11179,7 +11177,7 @@ end
  Setting:AddSeperatorRight("Dev Function")
     Setting:AddTextboxRight("key dev","",true,function(value)
 _G.GetFunction = value
-if _G.GetFunction  == "65201010068" then
+if _G.GetFunction  == "getfree" then
 Setting:AddButtonRight("Copy piace Id",function()
 setclipboard(tostring(game.PlaceId))
 end)
